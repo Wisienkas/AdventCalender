@@ -38,9 +38,9 @@ papersize <- function(l, w, h) {
   return(sum(sides * 2) + slack)
 }
 
-sum <- 0
-for(row in 1:nrow(data)) sum <- sum + papersize(data[row, 1], data[row, 2], data[row, 3])
+sum <- sum(apply(data, 1, function(x) papersize(x[1], x[2], x[3])))
 
+# Correct Result 1606483
 print(paste("The total square feet of wrapping paper should be:", sum))
 
 ##
@@ -82,7 +82,7 @@ assert(34, ribbon(2, 3, 4))
 assert(14, ribbon(1, 1, 10))
 
 # Get result
-sum <- 0
-for(row in 1:nrow(data)) sum <- sum + ribbon(data[row, 1], data[row, 2], data[row, 3])
+sum <- sum(apply(data, 1, function(x) ribbon(x[1], x[2], x[3])))
 
+# Correct Result 3842356
 print(paste("The total feet of ribbon ordered should be:", sum))
