@@ -41,6 +41,7 @@ byte_arr <- charToRaw(txt_sequence)
 floor <- 0
 for(i in 1:length(byte_arr)) ifelse(byte_arr[i] == 0x28, floor <- floor + 1, floor <- floor - 1)
 
+# Correct Result 280
 print(paste("Santa will be on floor:", floor))
 
 ## Challenge 2
@@ -66,4 +67,5 @@ for(i in 1:length(byte_arr)) {
   if(floor == -1) break;
 }
 
+# Correct result 1797
 print(paste("Santa first enter basement at position:", count))
