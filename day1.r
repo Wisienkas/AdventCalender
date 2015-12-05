@@ -27,6 +27,9 @@
 #        ))) and )())()) both result in floor -3.
 # 
 
+# Load util
+source("util.r")
+
 
 ##################
 # Read in data

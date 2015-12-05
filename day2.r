@@ -18,6 +18,9 @@
 #  A present with dimensions 1x1x10 requires 2*1 + 2*10 + 2*10 = 42 square feet of wrapping 
 #     paper plus 1 square foot of slack, for a total of 43 square feet.
 
+# Load util
+source("util.r")
+
 ##
 # Read in data
 data <- read.csv("data/day2.txt", header = F, sep = "x")
@@ -74,10 +77,6 @@ ribbon <- function(l, w, h) {
 }
 
 # Test
-assert <- function(expected, actual) {
-  if(expected != actual) print(paste("The Expected:", expected, "was not equal the actual:", actual))
-}
-
 assert(34, ribbon(2, 3, 4))
 assert(14, ribbon(1, 1, 10))
 

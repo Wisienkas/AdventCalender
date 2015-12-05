@@ -19,6 +19,9 @@
 #     the MD5 hash of pqrstuv1048970 looks like 000006136ef....
 #
 
+# Load util
+source("util.r")
+
 ##
 # Challenge 1
 #
@@ -39,9 +42,6 @@ find5zerohash <- function(secret, leadingzeroes) {
   return(i)
 }
 
-assert <- function(expected, actual) {
-  if(expected != actual) print(paste("The Expected:", expected, "was not equal the actual:", actual))
-}
 assert(expected = 609043, actual = find5zerohash(test1, 5))
 assert(expected = 1048970, actual = find5zerohash(test2, 5))
 

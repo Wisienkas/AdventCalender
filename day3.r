@@ -20,6 +20,9 @@
 #
 #  ^v^v^v^v^v delivers a bunch of presents to some very lucky children at only 2 houses.
 
+# Load util
+source("util.r")
+
 # Read in data
 data <- read.csv("data/day3.txt", header = F)
 txt_sequence <- as.character(data[1,1])
